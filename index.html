@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Рисуем точками</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <header class="header">
+      <h1 class="header__title">Рисуем точками</h1>
+    </header>
+    <main class="main">
+      <section class="desc">
+        <h2 class="desc__title">Описание</h2>
+        <p class="desc__text">Простой графический редактор, работающий по следующему принципу: при нажатии на холст, в месте клика появляется точка, которая соединена линиями с заданным количеством предыдущих точек.</p>
+        <p class="desc__text">Новая точка и линии, которые идут к заданному количеству предыдущих точек, имеют одинаковый цвет (цвет выбирается пользователем перед рисованием точки).</p>
+        <p class="desc__text">Если предыдущая точка только одна, то линия всего одна — к этой точке.</p>
+
+        <section class="settings">
+        <h2 class="settings__title">Настройки</h2>
+        <p class="settings__desc">Выберите максимальное количество точек, к которым будут проводиться линии (минимум 2), и начинайте творить!</p>
+        <div class="counter">
+          <button class="counter__btn counter__btn--less">&ndash;</button>
+          <input type="text" class="counter__input" value="2" disabled>
+          <button class="counter__btn counter__btn--more">+</button>          
+        </div>
+      </section> <!--    end settings section-->
+
+      </section> <!--    end desc section-->
+
+      <section class="draw">
+        <h2 class="draw__title">Поехали!</h2>
+        <section class="color">
+          <h3 class="color__title">Выбор цвета</h3>
+          <p class="color__desc">Перед тем как нарисовать очередную точку, выберите любой цвет из пяти предложенных.</p>
+          <p class="color__desc">Начните рисовать точки, кликая мышкой в белой области</p>
+          <input type="radio" class="color__input" name="colors" value="red" id="red" checked>
+          <input type="radio" class="color__input" name="colors" value="yellow" id="yellow">
+          <input type="radio" class="color__input" name="colors" value="green" id="green">
+          <input type="radio" class="color__input" name="colors" value="blue" id="blue">
+          <input type="radio" class="color__input" name="colors" value="purple" id="purple">
+
+          <div class="color__labels">
+            <label for="red" class="color__label color__label--red">
+              <span class="visually-hidden">Красный</span>
+            </label>
+            <label for="yellow" class="color__label color__label--yellow">
+              <span class="visually-hidden">Желтый</span>
+            </label>
+            <label for="green" class="color__label color__label--green">
+              <span class="visually-hidden">Зеленый</span>
+            </label>
+            <label for="blue" class="color__label color__label--blue">
+              <span class="visually-hidden">Синий</span>
+            </label>
+            <label for="purple" class="color__label color__label--purple">
+              <span class="visually-hidden">Фиолетовый</span>
+            </label>
+          </div>
+
+        </section> <!--      end color section-->
+
+        <section class="canvas">
+          <h2 class="visually-hidden">Холст для рисования</h2>
+          
+          <canvas class="canvas__canvas" width="300" height="300"></canvas>
+        </section>
+        
+        <button class="draw__btn draw__btn--restart" disabled>Начать заново</button>
+      </section> <!--      end draw section-->
+
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+  </div>
+  <script src="js/scripts.min.js"></script> 
+</body>
+</html>
